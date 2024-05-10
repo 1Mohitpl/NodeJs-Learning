@@ -9,7 +9,7 @@ const newServer = http.createServer((req, res) => {
     console.log(carUrl);
 
     fs.appendFile("log.txt", log, (err, data) =>{
-        switch (req.url){
+        switch (carUrl.pathname){
             case '/food':
                 res.end("here your order....")
             break;
