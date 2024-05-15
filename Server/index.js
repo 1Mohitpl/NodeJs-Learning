@@ -1,4 +1,3 @@
-const http = require ("http");
 // const fs = require ("fs");
 // const url = require("url");
 const express = require("express");
@@ -9,9 +8,11 @@ app.get("/", (req, res) =>{
     return res.send("hello from home page");
 });
 
-app.get("/about", (Req, res) => {
-  return res.send("hello from about page");
+app.get("/about", (req, res) => {
+  return res.send(`hello ${req.query.name}`);
 });
+
+app.listen(4001, ()=>console.log("server is started..."))
 
 
 
@@ -41,9 +42,5 @@ app.get("/about", (Req, res) => {
 
   //                                                     }
 
-const myServer = http.createServer(app);
+// const myServer = http.createServer(app);
 
-myServer.listen(4001, () => {
-
-    console.log("server is running...")
-})
