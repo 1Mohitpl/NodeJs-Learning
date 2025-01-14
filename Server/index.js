@@ -1,6 +1,7 @@
 // const fs = require ("fs");
 // const url = require("url");
 const express = require("express");
+const port = 4000;
 
 const app = express();
 
@@ -9,14 +10,14 @@ app.get("/", (req, res) =>{
 });
 
 app.get("/about", (req, res) => {
-  return res.send(`hello ${req.query.name}`);
+  return res.send(`hello ${req.query.name} you are old ${req.query.age}`);
 });
 
-app.listen(4001, ()=>console.log("server is started..."))
+app.listen(port, ()=>console.log(`server is started... ${port}`))
 
 
 
-  //                                                    function myHandler(req, res) {
+  //function myHandler(req, res) {
   // const log = `${Date.now()} : ${req.url} New request recived\n `;
   //   const myUrl = url.parse(req.url);
   //   console.log(myUrl);
