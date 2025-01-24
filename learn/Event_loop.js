@@ -1,5 +1,7 @@
 // practice this code to understand the working flow of libuv
 
+// understand the working flow of event loop of each phase
+
 const { isUtf8 } = require("buffer");
 const fs = require("fs");
 setImmediate (() => console.log("set-immediate"));
