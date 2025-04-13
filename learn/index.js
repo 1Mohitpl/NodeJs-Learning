@@ -1,4 +1,37 @@
+const express = require('express')
+const app = express()
+const port = 3000
+app.use(middleware2);   // global middleware
+app.use(middleware1);
 
+
+function middleware1 (req, res, next) {
+  console.log("i am middleware1")
+  next();
+}
+
+
+function middleware2 (req, res, next) {
+  console.log("i am middleware2")
+  next();
+}
+
+function middleware3 (req, res, next) {
+  console.log("i am middleware3")
+  next();
+}
+
+
+
+app.get('/', middleware3, (req, res, nextMiddleware) =>{
+
+      console.log("i am standardExpress");
+      res.send("Hello world");
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+}) 
 
 
 
